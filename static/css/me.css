@@ -119,6 +119,7 @@ body{
 .m-mobile-show{
     display: none !important;
 }
+
 @media screen and (max-width: 768px){
     .m-mobile-hide {
         display: none !important;
