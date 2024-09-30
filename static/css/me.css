@@ -66,6 +66,9 @@ body{
     margin-bottom: 0.5em !important;
 }
 /*------opacity--------*/
+.m-opacity-normal{
+    opacity: 0.88 !important;
+}
 .m-opacity-mini{
     opacity: 0.8 !important;
 }
@@ -112,6 +115,11 @@ body{
     max-width: 60em !important;
     margin:auto !important;
 }
+/*-----shadow-------*/
+.m-shadow-small{
+    -webkit-box-shadow:0 4px 8px rgb(0,0,0,0.2) !important;
+    box-shadow:0 4px 8px rgb(0,0,0,1) !important;
+}
 /*--------color-------*/
 .m-black{
     color:#333 !important;
@@ -128,6 +136,10 @@ body{
         display: block !important;
     }
     .m-padded-lr-responsive{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .m-mobile-lr-clear{
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
