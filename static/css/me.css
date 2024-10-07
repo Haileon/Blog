@@ -67,7 +67,7 @@ body{
 }
 /*------opacity--------*/
 .m-opacity-normal{
-    opacity: 0.88 !important;
+    opacity: 0.9 !important;
 }
 .m-opacity-mini{
     opacity: 0.8 !important;
@@ -117,8 +117,8 @@ body{
 }
 /*-----shadow-------*/
 .m-shadow-small{
-    -webkit-box-shadow:0 4px 8px rgb(0,0,0,0.2) !important;
-    box-shadow:0 4px 8px rgb(0,0,0,1) !important;
+    -webkit-box-shadow:0 4px 8px rgb(0,0,0,0.1) !important;
+    box-shadow:0 4px 8px rgb(0,0,0,0.8) !important;
 }
 /*--------color-------*/
 .m-black{
