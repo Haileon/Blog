@@ -11,6 +11,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="./static/lib/prism/prism.css">
+    <link rel="stylesheet" href="./static/lib/tocbot/tocbot.css">
     <link rel="stylesheet" href="./static/css/me.css">
 </head>
 
@@ -59,7 +60,7 @@
             <!--图片-->
             <img src="https://free-images.com/lg/ada9/seekarspitze_von_achenkirch.jpg" alt="" class="ui fluid rounded image">
         </div>
-        <div class="ui attached segment">
+        <div class="ui  attached segment">
             <!--内容-->
             <div class="ui right aligned basic segment">
                 <div class="ui orange  basic label">原创</div>
@@ -71,7 +72,7 @@
             <h2 class="ui center aligned header">浅谈中国传统剪纸艺术</h2>
             <br>
 
-            <div id="content" class="typo typo-selection m-padded-lr-responsive m-padded-tb-large">
+            <div id="content" class="typo typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large">
                 <div class="RichText ztext Post-RichText css-1ygg4xu" options="[object Object]">
 <!--                    <p data-first-child="" data-pid="cvVaYzVR">-->
 <!--                        <span>-->
@@ -170,7 +171,7 @@
                             </ul>
                         </li>
                     </ol>
-
+                    <!--TODO:使用tocbot插件生成目录--Make sure rendered headings have id attributes-->
                     <h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
 
                     <p><i class="serif">Typo.css</i> 的目的是，在一致化浏览器排版效果的同时，构建最适合中文阅读的网页排版。</p>
@@ -570,7 +571,7 @@ h5,h6{font-size:1em;}
             </div>
 
 
-            <div class="ui bottom attached segment">
+            <div id="comment-container" class="ui bottom attached segment">
                 <!--留言区域-->
                 <div class="ui teal segment">
                     <div class="ui threaded comments">
@@ -615,11 +616,28 @@ h5,h6{font-size:1em;}
                             <button class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br>
+<br>
+<div class="m-right-bottom m-fixed m-padded">
+    <div class="ui vertical icon buttons ">
+        <button type="button" class="ui teal button toc">目录</button>
+        <a href="#comment-container" class="ui teal button">留言</a>
+        <button class="ui icon button"><i class="weixin icon"></i></button>
+        <a href="#" class="ui icon button"><i class="chevron up icon"></i></a>
+    </div>
+</div>
+<div class="ui toc-container flowing popup  transition hidden" style="width:250px!important;">
+    <ol class="js-toc">
+
+    </ol>
+</div>
+
 <!--底部footer-->
 <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity-tiny">
     <div class="ui center aligned container">
@@ -660,6 +678,7 @@ h5,h6{font-size:1em;}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 <script src="./static/lib/prism/prism.js"></script>
+<script src="./static/lib/tocbot/tocbot.min.js"></script>
     <script>
         $('.menu.toggle').click(function () {
             $('.m-item ').toggleClass('m-mobile-hide');
@@ -668,6 +687,21 @@ h5,h6{font-size:1em;}
            popup:$('.payQR.popup'),
             on:'click',
             position:'bottom center'
+        });
+        $('.toc.button').popup({
+            popup:$('.toc-container.popup'),
+            on:'click',
+            position:'left center'
+        });
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.js-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.js-toc-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
         });
     </script>
 </body>

@@ -14,8 +14,9 @@ body{
 .m-padded-tiny{
     padding: 0.3em !important;
 }
-
-
+.m-padded{
+    padding: 1em !important;
+}
 .m-padded-tb-mini{
     padding-top: 0.2em !important;
     padding-bottom: 0.2em !important;
@@ -86,6 +87,16 @@ body{
     top:0;
     right:0;
 }
+.m-right-bottom{
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+.m-fixed{
+    position:fixed !important;
+    z-index:1 !important;
+}
+
 /*-----text-----*/
 .m-text{
     font-weight: 300 !important;
